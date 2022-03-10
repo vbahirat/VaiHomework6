@@ -9,7 +9,7 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 Github repo link:
-
+https://github.com/vbahirat/VaiHomework6.git
 
 ```{r}
 data(happy, package="productplots")
@@ -19,7 +19,7 @@ head(happy)
 
 ```{r}
 HAPPY <- readRDS("data/HAPPY.rds")
-HAPPY
+head(HAPPY)
 ```
 ```{r}
 is.na(HAPPY)<-HAPPY=="IAP"
@@ -80,6 +80,8 @@ HAPPY$PARTID<-factor(HAPPY$PARTYID,levels=c("STRONG REPUBLICAN","NOT STR REPUBLI
 ggplot(HAPPY,aes(x=SEX,fill=factor(HAPPY)))+geom_bar()
 ```
 We see a greater female population "pretty happy" and "very happy" compared to the male population. 
+
+
 ```{r}
 ggplot(HAPPY, aes(x = SEX, y = HAPPY, fill = AGE))+  geom_col(position = "dodge")
 ```
@@ -89,6 +91,8 @@ Most of the very happy female populations is lower age compared to the male popu
 ggplot(data=HAPPY,aes(x=HAPPY,y=WTSSALL,))+geom_boxplot()
 ```
 There is a very small range of people who are happy with their weight in the interquartile range. We also see most of the pretty happy people lie in lower weight probability values. We see some outliers in not too happy which may indicate people may not be happy with their weight probability values.  
+
+
 ```{r}
 ggplot(HAPPY,aes(x=HEALTH,fill=factor(HAPPY)))+geom_bar()
 ```
